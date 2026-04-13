@@ -329,4 +329,27 @@ You are helpful, professional, warm and concise. When asked about careers, inves
     chip.addEventListener('click', () => sendMessage(chip.dataset.msg));
   });
 
+  // Spawn particles (add once on DOMContentLoaded)
+const container = document.getElementById('preParticles');
+for (let i = 0; i < 20; i++) {
+  const p = document.createElement('div');
+  p.className = 'pre-particle';
+  p.style.cssText = `left:${Math.random()*100}%;top:${60+Math.random()*40}%;--d:${4+Math.random()*5}s;--delay:${Math.random()*4}s;background:${Math.random()>.5?'var(--blue)':'var(--gold)'}`;
+  container.appendChild(p);
+}
+
+// Percentage counter
+const pctEl = document.getElementById('prePct');
+let start = null;
+function animatePct(ts) {
+  if (!start) start = ts;
+  const p = Math.min((ts - start) / 2400 * 100, 100);
+  pctEl.textContent = Math.min(Math.round(p), 100) + '%';
+  if (p < 100) requestAnimationFrame(animatePct);
+}
+requestAnimationFrame(animatePct);
+
+// Your existing hide code stays as-is:
+// document.getElementById('preloader').classList.add('out');
+
 });
