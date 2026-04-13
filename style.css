@@ -1175,7 +1175,7 @@ a {
   font-weight: 800;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--white);
   background: var(--gold);
   padding: 4px 12px;
   border-radius: 2px;
