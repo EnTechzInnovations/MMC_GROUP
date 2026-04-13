@@ -352,4 +352,6 @@ requestAnimationFrame(animatePct);
 // Your existing hide code stays as-is:
 // document.getElementById('preloader').classList.add('out');
 
+
+
 });

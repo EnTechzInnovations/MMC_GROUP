@@ -9,6 +9,5 @@
    NOTE: For production, use a backend server to keep your key secure.
 ================================================================ */
 
-
 window.MMC_API_KEY = 'YOUR_API_KEY_HERE';
 
