@@ -1355,38 +1355,39 @@
   <!-- Main JS -->
   <script src="main.js"></script>
 
-
-  <script>
+<script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
-
   const form = e.target;
-
   const name = form.name.value;
   const email = form.email.value;
   const phone = form.phone.value || "Not provided";
   const message = form.message.value;
 
   const subject = encodeURIComponent("New Contact Message – " + name);
-
   const body = encodeURIComponent(
 `New Contact Message
 =====================
-
 Name    : ${name}
 Email   : ${email}
 Phone   : ${phone}
-
 Message :
 ${message}
-
 – Sent from MMC Group Website`
   );
 
-  // ✅ Gmail Web open
-  const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=entechzinnovations@gmail.com&su=${subject}&body=${body}`;
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  window.open(gmailURL, "_blank");
+  if (isMobile) {
+    // ✅ Opens Gmail app (or default mail app) on mobile
+    window.location.href = `mailto:entechzinnovations@gmail.com?subject=${subject}&body=${body}`;
+  } else {
+    // ✅ Opens Gmail web on desktop
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=entechzinnovations@gmail.com&su=${subject}&body=${body}`,
+      "_blank"
+    );
+  }
 });
 </script>
 
