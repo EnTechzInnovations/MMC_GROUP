@@ -1376,21 +1376,19 @@ ${message}
 – Sent from MMC Group Website`
   );
 
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const toEmail = "entechzinnovations@gmail.com";
+  const isAndroid = /Android/i.test(navigator.userAgent);
 
-  if (isMobile) {
-    // ✅ Opens Gmail app (or default mail app) on mobile
-    window.location.href = `mailto:entechzinnovations@gmail.com?subject=${subject}&body=${body}`;
+  if (isAndroid) {
+    // ✅ Android: use Gmail intent URL — bypasses Chrome's mailto: block
+    const intentURL = `intent://compose?to=${encodeURIComponent(toEmail)}&subject=${subject}&body=${body}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+    window.location.href = intentURL;
   } else {
-    // ✅ Opens Gmail web on desktop
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=entechzinnovations@gmail.com&su=${subject}&body=${body}`,
-      "_blank"
-    );
+    // ✅ iOS / Desktop: mailto opens Mail app or Gmail web
+    window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
   }
 });
 </script>
-
 
 </body>
 
