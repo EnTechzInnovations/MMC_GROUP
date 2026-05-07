@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => { resize(); init(); });
   }
 
+  
+
   /* ── JOURNEY SLIDER ─────────────────────────────────────── */
   const jScroll = document.getElementById('jScroll');
   if (jScroll) {
@@ -351,6 +353,7 @@ requestAnimationFrame(animatePct);
 
 // Your existing hide code stays as-is:
 // document.getElementById('preloader').classList.add('out');
+
 
 
 
