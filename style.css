@@ -1054,3 +1054,59 @@ textarea.finput { min-height: 120px; resize: vertical; }
   .hero-title { font-size: 2.6rem; }
   .contact-left, .contact-right { padding: 36px 24px; }
 }
+
+
+/* ── TRUST STRIP ── */
+.trust-strip {
+  padding: 50px 40px;
+  background: #f9f9f9;
+}
+
+.trust-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.trust-label {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.badge-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.badge-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  max-width: 200px;
+  word-break: break-word;
+}
