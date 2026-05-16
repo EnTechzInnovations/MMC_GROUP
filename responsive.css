@@ -1,0 +1,344 @@
+/* 
+   MMC GROUP — RESPONSIVE
+ */
+
+/* Restore gold eyebrow label colour that gets overridden */
+.trust-label {
+  font-size: .65rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+  text-transform: uppercase !important;
+  color: #E8A020 !important;
+  margin-bottom: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.trust-label::after {
+  content: '' !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: rgba(232,160,32,.25) !important;
+}
+
+/* Trust strip background & spacing */
+.trust-strip {
+  border-top: 1px solid rgba(5,14,43,.1);
+  margin-top: 56px;
+  padding: 40px !important;
+  background: #fff !important;
+}
+
+/* Trust grid — two columns on desktop */
+.trust-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 36px !important;
+}
+
+/* Badge row stays horizontal and wraps */
+.trust-badges {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  align-items: flex-start !important;
+}
+
+/* Badge card — column layout (logo on top, name below) */
+.trust-badge {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-align: center !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+.trust-badge:hover { background: transparent !important; border: none !important; }
+
+/* ── BADGE LOGO — scale tiers ─────────────────────────────── */
+.badge-logo {
+  width: 120px  !important;
+  height: 120px !important;
+  object-fit: contain;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.badge-name {
+  font-size: .72rem;
+  font-weight: 700;
+  color: #374151;
+  max-width: 120px;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 2 — SECTION PADDING (100px → smaller on mobile)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  .section-py      { padding: 80px 0; }
+  #management      { padding: 80px 0; }
+}
+@media (max-width: 767px) {
+  .section-py      { padding: 60px 0; }
+  #management      { padding: 60px 0; }
+}
+@media (max-width: 575px) {
+  .section-py      { padding: 48px 0; }
+  #management      { padding: 48px 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 3 — NAVBAR (burger & collapse on small screens)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  .navbar-brand { flex-shrink: 0; }
+  #navbar { padding: 14px 0; }
+}
+@media (max-width: 575px) {
+  .nav-cta {
+    padding: 10px 18px !important;
+    font-size: .76rem !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 4 — HERO SECTION
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  /* Reduce vertical breathing room inline-set by the HTML */
+  #hero .container {
+    padding-top: 90px !important;
+    padding-bottom: 100px !important;
+  }
+}
+@media (max-width: 767px) {
+  #hero .container {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+  .hero-title  { font-size: clamp(2.2rem, 9vw, 3.5rem); }
+  .hero-sub    { font-size: .93rem; margin-bottom: 32px; }
+  .hero-carousel-dots { bottom: 60px; }
+}
+@media (max-width: 575px) {
+  #hero .container {
+    padding-top: 70px !important;
+    padding-bottom: 64px !important;
+  }
+  .hero-title  { font-size: 2.1rem; line-height: 1.15; }
+  .hero-sub    { font-size: .88rem; }
+  .hero-badge  { font-size: .63rem; padding: 6px 14px; letter-spacing: .1em; }
+  .btn-gold, .btn-outline-white {
+    padding: 13px 24px;
+    font-size: .78rem;
+  }
+  .hero-carousel-dots { bottom: 40px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 5 — ABOUT SECTION — image height & badge block
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  .about-img-main   { height: 440px; }
+  .about-img-col    { padding-right: 0 !important; }
+  .about-badge-block { left: 10px; top: 20px; padding: 18px 20px; }
+}
+@media (max-width: 767px) {
+  .about-img-main   { height: 340px; }
+  .about-badge-block { left: 8px; top: 12px; padding: 14px 16px; }
+  .about-badge-block .num { font-size: 2.4rem; }
+}
+@media (max-width: 575px) {
+  .about-img-main   { height: 260px; }
+  .about-badge-block { left: 8px; top: 10px; padding: 12px 14px; }
+  .about-badge-block .num { font-size: 2rem; }
+  .about-badge-block .lbl { font-size: .6rem; }
+}
+
+/* Trust strip inside about — shrink logos on tablet */
+@media (max-width: 991px) {
+  .badge-logo      { width: 90px  !important; height: 90px  !important; }
+  .badge-name      { font-size: .68rem; max-width: 90px; }
+  .trust-grid      { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .trust-strip     { padding: 32px 0 0 !important; }
+}
+@media (max-width: 575px) {
+  .badge-logo      { width: 72px  !important; height: 72px  !important; padding: 8px !important; }
+  .badge-name      { font-size: .62rem; max-width: 72px; }
+  .trust-badges    { gap: 10px !important; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 6 — OUR STORY SECTION — inline paddings on mobile
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  /* The story cards use inline padding:36px — tighten via cascade override */
+  #our-story .container > .row > .col-12 > div,
+  #our-story .container > .fu > div,
+  #our-story .fu         > .row > div > div {
+    padding: 24px !important;
+  }
+  #our-story .fu .row.g-4 .col-lg-6 > div { padding: 24px !important; }
+}
+@media (max-width: 575px) {
+  #our-story .container > .row > .col-12 > div,
+  #our-story .fu > .row > div > div {
+    padding: 20px 16px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 7 — BUSINESSES SECTION
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 575px) {
+  .biz-name { font-size: 1.2rem; }
+  .biz-desc { font-size: .78rem; }
+  /* Core media focus grid — 2-col → 1-col */
+  #businesses .col-lg-6 .col-lg-6,
+  #businesses [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 8 — LEADERSHIP / MANAGEMENT SECTION
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  .ceo-card          { padding: 40px 36px 28px; }
+  .executives-grid   { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+@media (max-width: 767px) {
+  .ceo-card          { padding: 32px 24px 24px; }
+  .ceo-img-wrap .leader-img { width: 120px; height: 120px; }
+  .ceo-stats         { flex-wrap: wrap; gap: 0; }
+  .ceo-stat          { min-width: 80px; padding: 8px 0; }
+  .ceo-stat-num      { font-size: 1.6rem; }
+  .leader-name       { font-size: 1.5rem; }
+  .leader-about      { font-size: .88rem; }
+}
+@media (max-width: 575px) {
+  .executives-grid   { grid-template-columns: 1fr; }
+  .exec-card         { padding: 28px 18px 20px; }
+  .exec-img-wrap .leader-img { width: 90px; height: 90px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 9 — STATS SECTION
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .stat-num  { font-size: 3.2rem; }
+  .stat-card { padding: 36px 16px; }
+  .stat-label{ font-size: .65rem; }
+}
+@media (max-width: 575px) {
+  .stat-num  { font-size: 2.8rem; }
+  .stat-card { padding: 28px 12px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 10 — CONTACT SECTION
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  .contact-left  { padding: 44px 36px; }
+  .contact-right { padding: 44px 36px; }
+}
+@media (max-width: 767px) {
+  .contact-left  { padding: 36px 28px; }
+  .contact-right { padding: 36px 28px; }
+  .contact-left h3 { font-size: 1.7rem; }
+}
+@media (max-width: 575px) {
+  .contact-left  { padding: 28px 18px; }
+  .contact-right { padding: 28px 18px; }
+  .contact-left h3 { font-size: 1.45rem; }
+  .finput        { padding: 10px 12px; font-size: .84rem; }
+  .btn-submit    { font-size: .78rem; padding: 13px; }
+  .cinfo-row     { gap: 10px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 11 — FOOTER
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  #footer         { padding: 60px 0 0; }
+}
+@media (max-width: 767px) {
+  #footer         { padding: 50px 0 0; }
+  .footer-tagline { font-size: .8rem; }
+  .footer-divider {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+}
+@media (max-width: 575px) {
+  #footer         { padding: 40px 0 0; }
+  .footer-copy    { font-size: .72rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 12 — MARQUEE
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 575px) {
+  .marquee-item  { padding: 0 20px; font-size: .65rem; gap: 10px; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 13 — SCROLL-TO-TOP BUTTON position on mobile
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 575px) {
+  #scroll-top { bottom: 18px; right: 18px; width: 38px; height: 38px; font-size: .85rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 14 — PRELOADER on very small screens
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 575px) {
+  .pre-logo   { width: 150px; }
+  .pre-track  { width: 200px; }
+  .pre-text   { font-size: .7rem; letter-spacing: .18em; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 15 — GENERAL OVERFLOW GUARD
+   Prevents any child from causing horizontal scroll
+   ══════════════════════════════════════════════════════════════ */
+html, body { overflow-x: hidden; max-width: 100vw; }
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 16 — SECTION TITLE SIZE on very small screens
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 575px) {
+  .section-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 17 — ABOUT VALUE ROWS alignment on narrow screens
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 575px) {
+  .value-row { gap: 12px; }
+  .val-icon  { width: 40px; height: 40px; font-size: 1.1rem; }
+  .val-title { font-size: .88rem; }
+  .val-desc  { font-size: .80rem; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FIX 18 — HERO BADGE wraps cleanly on small screens
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-badge {
+    font-size: .6rem;
+    padding: 6px 12px;
+    gap: 6px;
+    letter-spacing: .08em;
+    flex-wrap: wrap;
+  }
+}
